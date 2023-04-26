@@ -1,6 +1,7 @@
 import { Box, Stack } from '@mui/material'
 import React from 'react'
 import {ChannelCard, VideoCard } from './'
+
 export default function Videos({videos}) {
   return (
     <Stack direction='row' flexWrap='wrap' justifyContent='start' gap={2}>

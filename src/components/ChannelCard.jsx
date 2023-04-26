@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../utils/constants";
 
-export default function ChannelCard({ channelDetail }) {
+export default function ChannelCard({ channelDetail, marginTop }) {
   return (
     <Box
       sx={{
@@ -13,9 +13,10 @@ export default function ChannelCard({ channelDetail }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        width: {xs: '356px', md: '320px'},
-        height: '326px',
-        margin: 'auto'
+        width: { xs: "356px", md: "320px" },
+        height: "326px",
+        margin: "auto",
+        marginTop,
       }}
     >
       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
@@ -34,14 +35,18 @@ export default function ChannelCard({ channelDetail }) {
               demoProfilePicture
             }
             alt={channelDetail?.snippet?.title}
-            sx={{borderRadius: '50%', height: '180px', width: '180px',
-              mb: 2, border: '1px solid #e3e3e3' }}
+            sx={{
+              borderRadius: "50%",
+              height: "180px",
+              width: "180px",
+              mb: 2,
+              border: "1px solid #e3e3e3",
+            }}
           />
           <Typography variant="h6">
             {channelDetail?.snippet?.title}
-            <CheckCircle sx={{fontSize: 14, color: 'gray', ml:'5px'}}/>
+            <CheckCircle sx={{ fontSize: 14, color: "gray", ml: "5px" }} />
           </Typography>
-         
         </CardContent>
       </Link>
     </Box>
